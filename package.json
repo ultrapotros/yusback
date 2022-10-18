@@ -1,0 +1,39 @@
+{
+  "name": "message-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "build": "cross-env NODE_ENV=development OTHERFLAG=myValue webpack --config build/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultrapotros/urlshortenerback"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ultrapotros/yusback/issues"
+  },
+  "homepage": "https://github.com/ultrapotros/urlshortenerback/blob/main/README.md",
+  "dependencies": {
+    "@sentry/node": "^6.18.2",
+    "@sentry/tracing": "^6.18.2",
+    "aws-jwt-verify": "^3.0.0",
+    "blueimp-md5": "^2.19.0",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "mongodb": "^4.4.1",
+    "moongose": "^1.0.0",
+    "node": "14.19.0",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.15",
+    "pg": "8.2.x"
+  }
+}
