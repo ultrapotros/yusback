@@ -6,7 +6,6 @@ const newUrl = async (username, url) => {
 
         const urlregistered = await UrlsList.findOne( {url} )
         if (urlregistered) {
-            console.log(urlregistered)
             const test = urlregistered.username;
             if (test==username) {
                 return  urlregistered;
@@ -27,7 +26,6 @@ const handleCreateUrl = async (username,url) => {
     let shortUrlcreated2 = Math.random().toString(36).substr(2, 6);
     const shortUrlcreated = 'www.'+shortUrlcreated2+'.com';
     try {
-        console.log('en try')
         const isShortUrlcreated = await UrlsList.findOne( {shorturl:shortUrlcreated} )
         if (isShortUrlcreated) {
             return ({mensaje: "That short url exists"});
@@ -78,7 +76,6 @@ const modifyUrl = async (filter,update) => {
 
 const deleteUrl = async (shorturl) => {
     try {
-        console.log(shorturl)
         const data = await UrlsList.findByIdAndDelete(shorturl.id)
         if (data) {
             return (data);
