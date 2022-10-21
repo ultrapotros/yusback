@@ -46,6 +46,7 @@ const handleCreateUrl = async (username,url) => {
         }
     }
     catch(err){
+        console.log(err)
         return err
     }
 }
