@@ -6,7 +6,7 @@ const MONGO_URL =process.env.MONGODB;
 const myClient = async () => {
   await mongoose
     .connect(MONGO_URL)
-    .then(() => console.log("DB FUNCIONANDO"))
+    .then(() => console.log("DB RUNNING"))
     .catch((error) => console.error(error));
 };
 
