@@ -34,7 +34,23 @@ const bodyParser = require('body-parser');
 
 
 app.use(bodyParser.json());
+
+
+
 app.use(cors());
+var allowlist = ['http://localhost:3000']
+var corsOptionsDelegate = function (req, callback) {
+  var corsOptions;
+  if (allowlist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
+  } else {
+    corsOptions = { origin: false } // disable CORS for this request
+  }
+  callback(null, corsOptions) // callback expects two parameters: error and options
+}
+
+
+
 
 //route for requested Authoritation petitions
 app.use(process.env.ROOT_LOGGED,validateToken, require('./routes'));
@@ -43,7 +59,7 @@ app.use(process.env.ROOT_LOGGED,validateToken, require('./routes'));
 app.use(process.env.ROOT, require('./routes'));
 
 
-app.post('/api/login', require('./controllers/loginController'));
+app.post('/api/login', cors(corsOptionsDelegate), require('./controllers/loginController'));
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
