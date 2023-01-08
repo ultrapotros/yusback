@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 
 
 app.use(cors());
-var allowlist = ['http://localhost:3000']
+/* var allowlist = ['http://localhost:3000']
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
   if (allowlist.indexOf(req.header('Origin')) !== -1) {
@@ -48,7 +48,7 @@ var corsOptionsDelegate = function (req, callback) {
   }
   callback(null, corsOptions) // callback expects two parameters: error and options
 }
-
+ */
 
 
 
