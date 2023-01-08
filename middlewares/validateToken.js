@@ -1,3 +1,4 @@
+const { errorHandler } = require('@sentry/node/types/handlers')
 const jwt = require('jsonwebtoken')
 
 const validateToken = (req, res, next) => {
@@ -8,7 +9,7 @@ const validateToken = (req, res, next) => {
     try {
         jwt.verify(token, process.env.SECRET, function(err,decoded){
             if (err) {
-                return res.sendStatus(403).json(err);
+                return res.sendStatus(403).json(errorHandler);
             }
 
             req.user = decoded;
