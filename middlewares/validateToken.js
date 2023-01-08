@@ -9,7 +9,7 @@ const validateToken = (req, res, next) => {
     try {
         jwt.verify(token, process.env.SECRET, function(err,decoded){
             if (err) {
-                return res.sendStatus(403).json(errorHandler);
+                return res.sendStatus(403).json({"error":"esto es un error"});
             }
 
             req.user = decoded;
