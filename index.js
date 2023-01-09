@@ -1,13 +1,13 @@
 require('dotenv').config(); 
 const myClient = require('./managers/connection');
-const Sentry = require("@sentry/node");
+/* const Sentry = require("@sentry/node"); */
 const cors = require("cors");
 
-const Tracing = require("@sentry/tracing");
+/* const Tracing = require("@sentry/tracing"); */
 
 const validateToken = require('./middlewares/validateToken')
 // variables to autenticate by token
-Sentry.init({
+/* Sentry.init({
   dsn: process.env.SENTRY,
 
   // Set tracesSampleRate to 1.0 to capture 100%
@@ -28,7 +28,7 @@ setTimeout(() => {
   } finally {
     transaction.finish();
   }
-}, 99);
+}, 99); */
 var app = require('express')();
 const bodyParser = require('body-parser');
 

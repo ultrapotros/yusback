@@ -1,4 +1,4 @@
-const { errorHandler } = require('@sentry/node/types/handlers')
+/* const { errorHandler } = require('@sentry/node/types/handlers') */
 const jwt = require('jsonwebtoken')
 
 const validateToken = (req, res, next) => {
