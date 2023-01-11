@@ -2,10 +2,10 @@ require('dotenv').config();
 const myClient = require('./managers/connection');
 /* const Sentry = require("@sentry/node"); */
 const cors = require("cors");
+const validateToken = require('./middlewares/validateToken')
 
 /* const Tracing = require("@sentry/tracing"); */
 
-const validateToken = require('./middlewares/validateToken')
 // variables to autenticate by token
 /* Sentry.init({
   dsn: process.env.SENTRY,

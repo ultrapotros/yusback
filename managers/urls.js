@@ -5,7 +5,7 @@ const newUrl = async (username, url) => {
     try {
 
         const urlregistered = await UrlsList.findOne( {url} )
-        if (urlregistered) {
+        if (urlregistered && username !="") {
             const test = urlregistered.username;
             if (test==username) {
                 return  urlregistered;

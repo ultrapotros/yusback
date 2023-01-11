@@ -1,7 +1,7 @@
 const {model , Schema}   = require("mongoose");
 
 const Urlsdata = new Schema({
-    username: {type: String, unique: true, required:true}, 
+    username: {type: String}, 
     clicksCounter: {type:Number},
     url: {type: String},
     shorturl: {type: String,  unique: true, required:true },
