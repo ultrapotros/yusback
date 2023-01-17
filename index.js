@@ -38,7 +38,7 @@ app.use(bodyParser.json());
 
 
 app.use(cors());
-var allowlist = ['http://localhost:3000','https://63bb31e4cc97665c37181eda--lambent-faloodeh-e422e2.netlify.app/login']
+/* var allowlist = ['http://localhost:3000','https://63bb31e4cc97665c37181eda--lambent-faloodeh-e422e2.netlify.app/login']
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
   if (allowlist.indexOf(req.header('Origin')) !== -1) {
@@ -47,7 +47,7 @@ var corsOptionsDelegate = function (req, callback) {
     corsOptions = { origin: false } // disable CORS for this request
   }
   callback(null, corsOptions) // callback expects two parameters: error and options
-}
+} */
 
 
 
