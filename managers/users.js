@@ -40,12 +40,11 @@ const forgotPassword = async (email)=> {
               expiresIn: '1h'
             })
             await user.update({tokenResetPassword:token})
-            const emailPort = process.env.PORT || 3000;
             const mailOptions = {
                 from: process.env.MAILDIRECTION,
                 to:`${user.email}`,
                 subject: 'Password reset email', 
-                text: `http://localhost:${emailPort}/resetpassword/${token}`
+                text: `${process.env.RESET_DIRECTION}/resetpassword/${token}`
             };
             return(mailOptions)
         }

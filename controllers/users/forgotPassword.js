@@ -16,7 +16,6 @@ async function recoverPassword (req, res){
             user: process.env.MAILDIRECTION, 
             pass: process.env.MAILSECRET
       }});
-
       try {
         transporter.sendMail(result,(err, response) => {
         if (err) {
